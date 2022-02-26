@@ -1,0 +1,64 @@
+<p>structurals works!</p>
+
+<!-- IF -->
+<!-- *ngIf -->
+<!-- <h3 *ngIf="true"> BSIT 3C</h3> -->
+
+<!-- IF -->
+<!-- this.toggle ? "success" : "error" -->
+<h4 *ngIf="displayClass; else elseBlock"> BSIT 3C</h4>
+
+<!-- ELSE -->
+<!-- ng-template -> BLOCK -->
+<ng-template #elseBlock>
+    <h3>No Class Found</h3>
+</ng-template>
+
+<!--  -->
+<hr>
+<!-- PROPER CONDITION -->
+<div *ngIf="displayClass; then thenBlock; else elseBlock"></div>
+
+<!-- IF -->
+<ng-template #thenBlock>
+    <h3>BSIT 3C CLASS</h3>
+</ng-template>
+
+<!-- ELSE -->
+<ng-template #elseBlock>
+    <h3>No Class Found.</h3>
+</ng-template>
+
+<!-- SWITCH -->
+<!-- Colors -->
+<!-- [ngSwitch] -->
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'green'"> This is green</div>
+    <div *ngSwitchCase="'red'"> This is red</div>
+    <div *ngSwitchCase="'blue'"> This is blue</div>
+    <div *ngSwitchDefault> No color found</div>
+</div>
+
+<hr>
+<!-- 
+    75 >= && 85 <= // Average
+    86 >= && 95 <= // Excellent
+    96 >= && 100 <= // Superior
+    74 <= Failed
+    101 >= Invalid
+-->
+<div [ngSwitch]="true">
+    <div *ngSwitchCase="grade >= 75 && grade <= 85"> Average</div>
+    <div *ngSwitchCase="grade >= 86 && grade <= 95"> Excellent</div>
+    <div *ngSwitchCase="grade >= 96 && grade <= 100"> Superior</div>
+    <div *ngSwitchCase="grade >= 101"> Invalid</div>
+    <div *ngSwitchDefault> Failed</div>
+</div>
+
+<hr>
+
+<!-- Foreach -->
+<div *ngFor="let stat of gradeStats; index as i; last as b">
+    <li> {{ b }} {{  i }} {{ stat }}</li>
+</div>
+

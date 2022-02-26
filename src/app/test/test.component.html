@@ -1,0 +1,47 @@
+
+<p>test works!</p>
+
+<!-- Class Binding -->
+<!-- [] -->
+<!-- Single Class -->
+<h3 [class]="colorGreen"> Hello BSIT 3C</h3>
+<h3 [class.color-warning]="isWarning"> Hello BSIT 3C</h3>
+
+<!-- Multiple Classes -->
+<!-- [ngClass] -->
+<h2 [ngClass]="multipleClasses"> BSIT 3C NG CLASS</h2>
+
+<hr>
+<!-- Property -->
+<!-- Disabled=true -->
+<!-- {{ }} string / text -->
+
+<!-- Event Binding -->
+<!-- () -->
+<button (click)="enableInput()"> ENABLE INPUT</button>
+<input type="text" [disabled]="isDisabled" id="{{ myID }}">
+
+<hr>
+
+<!-- Class Binding Event Binding -->
+<button 
+    (click)="changeRule()"
+    [ngClass]="{'color-success' : toggle,'color-error': !toggle}"
+> 
+{{ status }}
+</button>
+
+<hr>
+
+<!-- Two Way Binding -->
+<!-- Data -->
+<!-- [()] -->
+<input type="text" [(ngModel)]="myValue">
+ <br>
+<textarea name="" id="" cols="30" rows="10">{{ myValue }}</textarea>
+
+<hr>
+
+<input #dataInput type="text">
+<button (click)="storeData(dataInput)"> STORE DATA</button>
+{{ dataInput.value }}
